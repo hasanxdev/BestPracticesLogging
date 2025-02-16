@@ -1,0 +1,16 @@
+﻿filebeat.inputs:
+  - type: log
+    paths:
+      - /usr/share/filebeat/logs/*.log
+
+output.elasticsearch:
+  hosts: ["http://elasticsearch:9200"]
+  index: "logs-hsn-%{+yyyy.MM.dd}"
+
+setup.ilm.enabled: false
+setup.template.name: "logs-hsn"
+setup.template.pattern: "logs-hsn-*"
+setup.dashboards.index: "logs-hsn-*"
+
+setup.kibana:
+  host: "kibana:5601"
