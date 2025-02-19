@@ -1,5 +1,4 @@
-bin/
+﻿bin/
+.idea/
+BenchmarkDotNet.Artifacts/
 obj/
-/packages/
-riderModule.iml
-/_ReSharper.Caches/
